@@ -7,17 +7,15 @@ import {
 } from "@ionic/react";
 import React from "react";
 
-const Tab3Page: React.FC = () => {
+export const Story: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab Three</IonTitle>
+          <IonTitle>Story</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent />
     </IonPage>
   );
 };
-
-export default Tab3Page;
