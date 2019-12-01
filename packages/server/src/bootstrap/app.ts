@@ -1,9 +1,11 @@
 import { ApolloServer } from "apollo-server";
 import { buildSchema } from "type-graphql";
 import { config } from "../config";
+import { authChecker, context } from "../services/middlewares";
 
 export const createSchema = async () =>
   buildSchema({
+    authChecker,
     resolvers: config.graphql.resolver.paths,
     emitSchemaFile: config.graphql.schema.emitPath,
   });
@@ -15,6 +17,7 @@ export const build = async () => {
 
   return new ApolloServer({
     schema,
+    context,
     tracing: !isProduction,
 
     playground: isProduction
