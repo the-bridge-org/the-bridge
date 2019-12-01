@@ -1,0 +1,22 @@
+{
+  "name": "@bridge/server",
+  "version": "0.0.1",
+  "scripts": {
+    "postinstall": "cp .env.example .env",
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.7",
+    "dotenv": "^8.2.0",
+    "pg": "^7.14.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.5",
+    "typeorm": "^0.2.20"
+  },
+  "devDependencies": {
+    "graphql": "^14.5.8",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.2"
+  }
+}
