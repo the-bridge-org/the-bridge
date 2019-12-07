@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "postinstall": "cp .env.example .env",
-    "start": "nodemon"
+    "start": "nodemon",
+    "seed": "ts-node -r dotenv/config -r reflect-metadata --files src/seed.ts"
   },
   "dependencies": {
     "@bridge/constant": "^0.0.1",

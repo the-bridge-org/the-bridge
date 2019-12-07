@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "prestart": "docker-compose up -d",
-    "start": "lerna run --parallel start"
+    "start": "lerna run --parallel start",
+    "seed": "lerna run --scope @bridge/server seed"
   },
   "workspaces": {
     "packages": [

@@ -36,7 +36,7 @@ export class UserResolver {
     const user = new User();
     user.username = username;
     user.phoneNumber = phoneNumber;
-    user.password = bcrypt.hashSync(password);
+    user.password = password;
 
     await user.save();
 
