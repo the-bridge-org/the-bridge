@@ -14,12 +14,14 @@ import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/typography.css";
 import React from "react";
 import "./App.css";
+import { DevPrepare } from "./components/DevPrepare";
 import { Router } from "./Router";
 /* Theme variables */
 import "./theme/variables.css";
 
 export const App: React.FC = () => (
   <IonApp>
+    <DevPrepare />
     <Router />
   </IonApp>
 );

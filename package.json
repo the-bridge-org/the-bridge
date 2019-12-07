@@ -5,7 +5,8 @@
   "scripts": {
     "prestart": "docker-compose up -d",
     "start": "lerna run --parallel start",
-    "seed": "lerna run --scope @bridge/server seed"
+    "seed": "lerna run --scope @bridge/server seed",
+    "codegen": "lerna run --scope @bridge/app generate"
   },
   "workspaces": {
     "packages": [
