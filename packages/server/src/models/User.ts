@@ -1,3 +1,4 @@
+import * as bcrypt from "bcryptjs";
 import { Field, ID, Int, ObjectType } from "type-graphql";
 import {
   BaseEntity,
@@ -5,8 +6,11 @@ import {
   BeforeUpdate,
   Column,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { Relationship } from "./Relationship";
 
 @ObjectType()
 @Entity()
@@ -29,6 +33,11 @@ export class User extends BaseEntity {
   @Field({ nullable: true })
   token?: string;
 
+  @Field(() => Relationship, { nullable: true })
+  @ManyToOne(() => Relationship, { nullable: true })
+  @JoinColumn()
+  relationship: Promise<Relationship>;
+
   @Field(() => Int)
   @Column()
   createdAt: number;
@@ -39,6 +48,7 @@ export class User extends BaseEntity {
 
   @BeforeInsert()
   beforeInsert() {
+    this.password = bcrypt.hashSync(this.password);
     const now = (Date.now() / 1000) | 0;
     this.createdAt = now;
     this.updatedAt = now;
