@@ -19,7 +19,7 @@ export const build = async () => {
     schema,
     context,
     tracing: !isProduction,
-
+    cors: { origin: config.app.origin, credentials: true },
     playground: isProduction
       ? false
       : (config.graphql.playground.settings as any),
