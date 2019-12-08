@@ -6,8 +6,9 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
-import { Avatar } from "../components/Avatar";
-import { MessageBubble } from "../components/MessageBubble";
+
+import { ChatHistory } from "../components/ChatHistory";
+import { ChatInput } from "../components/ChatInput";
 
 export const Chat: React.FC = () => {
   return (
@@ -17,15 +18,10 @@ export const Chat: React.FC = () => {
           <IonTitle>Chat</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <Avatar></Avatar>
-      <MessageBubble text="hi" gender={false} sender={true}></MessageBubble>
-      <Avatar></Avatar>
-      <MessageBubble
-        text="hi, I am Sharon"
-        gender={true}
-        sender={false}
-      ></MessageBubble>
-      <IonContent></IonContent>
+      <IonContent fullscreen>
+        <ChatHistory />
+      </IonContent>
+      <ChatInput />
     </IonPage>
   );
 };

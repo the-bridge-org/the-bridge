@@ -1,7 +1,7 @@
 import { GraphQLError } from "graphql";
 
 export class ModelNotFoundError extends GraphQLError {
-  constructor() {
-    super("Model does not found");
+  constructor(message = "Model does not found") {
+    super(message);
   }
 }

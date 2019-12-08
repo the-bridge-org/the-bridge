@@ -22,8 +22,11 @@ export const authChecker: AuthChecker<IContext> = ({ context }) => {
 export const context: ContextFunction<ExpressContext, object> = ({
   req,
   res,
+  connection,
 }) => {
-  const token = (req as Request).headers.authorization;
+  const token = connection
+    ? connection.context["Authorization"]
+    : (req as Request).headers.authorization;
 
   let userId;
   if (token) {
