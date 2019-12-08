@@ -6,6 +6,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
+
 import { ChatHistory } from "../components/ChatHistory";
 import { ChatInput } from "../components/ChatInput";
 
