@@ -78,16 +78,9 @@ export class MessageResolver {
   })
   public async newMessage(
     @Root() messagePubSubPayload: IMessagePubSubPayload,
-    @Arg("topic") _: string,
-    @Ctx() { userId }: IContext
+    @Arg("topic") _: string
   ) {
-    if (!userId) {
-      throw new ModelNotFoundError("User not found");
-    }
-
-    if (!messagePubSubPayload.userIds.includes(userId)) {
-      throw new ModelNotFoundError("Unauthorized message subscribtion");
-    }
+    // TODO: Add authorization check
 
     return messagePubSubPayload.message;
   }

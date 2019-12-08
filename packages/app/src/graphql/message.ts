@@ -21,7 +21,7 @@ const CREATE_MESSAGE_MUTATION = gql`
   }
 `;
 
-const NEW_MESSAGE_SUBSCRIPTION = gql`
+export const NEW_MESSAGE_SUBSCRIPTION = gql`
   subscription($topic: String!) {
     newMessage(topic: $topic) {
       id

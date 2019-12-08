@@ -19,11 +19,13 @@ export const DevPrepare: React.FC = () => {
         return;
       }
 
-      const { token } = res.data.login;
+      const { token, relationship } = res.data.login;
 
-      if (!token) {
+      if (!token || !relationship) {
         return;
       }
+
+      sessionStorage.setItem("relationshipId", relationship.id);
 
       setAccessToken(token);
     });
