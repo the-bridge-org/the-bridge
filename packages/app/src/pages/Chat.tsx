@@ -7,6 +7,7 @@ import {
 } from "@ionic/react";
 import React from "react";
 import { Avatar } from "../components/Avatar";
+import { MessageBubble } from "../components/MessageBubble";
 
 export const Chat: React.FC = () => {
   return (
@@ -17,6 +18,13 @@ export const Chat: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <Avatar></Avatar>
+      <MessageBubble text="hi" gender={false} sender={true}></MessageBubble>
+      <Avatar></Avatar>
+      <MessageBubble
+        text="hi, I am Sharon"
+        gender={true}
+        sender={false}
+      ></MessageBubble>
       <IonContent></IonContent>
     </IonPage>
   );
