@@ -10,7 +10,7 @@ import {
   Subscription,
 } from "type-graphql";
 import { ModelNotFoundError } from "../errors/ModelNotFoundError";
-import { MessageInput } from "../inputs/message/MessageInput";
+import { CreateMessageInput } from "../inputs/message/CreateMessageInput";
 import { Message } from "../models/Message";
 import { User } from "../models/User";
 import { IContext } from "../services/middlewares";
@@ -43,7 +43,7 @@ export class MessageResolver {
 
   @Mutation(() => Message)
   public async createMessage(
-    @Arg("payload") { text }: MessageInput,
+    @Arg("payload") { text }: CreateMessageInput,
     @PubSub() pubSub: PubSubEngine,
     @Ctx() { userId }: IContext
   ) {

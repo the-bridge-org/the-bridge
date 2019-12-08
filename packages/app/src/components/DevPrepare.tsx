@@ -27,7 +27,7 @@ export const DevPrepare: React.FC = () => {
 
       setAccessToken(token);
     });
-  }, []);
+  }, [login]);
 
   return <></>;
 };

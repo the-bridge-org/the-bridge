@@ -8,6 +8,10 @@ export type Scalars = {
   Float: number;
 };
 
+export type CreateMessageInput = {
+  text: Scalars["String"];
+};
+
 export type LoginInput = {
   username: Scalars["String"];
   password: Scalars["String"];
@@ -20,10 +24,6 @@ export type Message = {
   createdAt: Scalars["Int"];
 };
 
-export type MessageInput = {
-  text: Scalars["String"];
-};
-
 export type Mutation = {
   __typename?: "Mutation";
   createMessage: Message;
@@ -32,7 +32,7 @@ export type Mutation = {
 };
 
 export type MutationCreateMessageArgs = {
-  payload: MessageInput;
+  payload: CreateMessageInput;
 };
 
 export type MutationRegisterArgs = {
