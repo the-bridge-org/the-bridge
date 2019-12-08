@@ -9,6 +9,9 @@ const LOGIN_MUTATION = gql`
       username
       phoneNumber
       token
+      relationship {
+        id
+      }
     }
   }
 `;

@@ -1,7 +1,7 @@
 import { Field, InputType } from "type-graphql";
 
 @InputType()
-export class MessageInput {
+export class CreateMessageInput {
   @Field()
   text: string;
 }

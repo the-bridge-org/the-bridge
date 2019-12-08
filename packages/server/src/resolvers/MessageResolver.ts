@@ -10,7 +10,7 @@ import {
   Subscription,
 } from "type-graphql";
 import { ModelNotFoundError } from "../errors/ModelNotFoundError";
-import { MessageInput } from "../inputs/message/MessageInput";
+import { CreateMessageInput } from "../inputs/message/CreateMessageInput";
 import { Message } from "../models/Message";
 import { User } from "../models/User";
 import { IContext } from "../services/middlewares";
@@ -43,7 +43,7 @@ export class MessageResolver {
 
   @Mutation(() => Message)
   public async createMessage(
-    @Arg("payload") { text }: MessageInput,
+    @Arg("payload") { text }: CreateMessageInput,
     @PubSub() pubSub: PubSubEngine,
     @Ctx() { userId }: IContext
   ) {
@@ -78,16 +78,9 @@ export class MessageResolver {
   })
   public async newMessage(
     @Root() messagePubSubPayload: IMessagePubSubPayload,
-    @Arg("topic") _: string,
-    @Ctx() { userId }: IContext
+    @Arg("topic") _: string
   ) {
-    if (!userId) {
-      throw new ModelNotFoundError("User not found");
-    }
-
-    if (!messagePubSubPayload.userIds.includes(userId)) {
-      throw new ModelNotFoundError("Unauthorized message subscribtion");
-    }
+    // TODO: Add authorization check
 
     return messagePubSubPayload.message;
   }

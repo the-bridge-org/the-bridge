@@ -3,6 +3,10 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input CreateMessageInput {
+  text: String!
+}
+
 input LoginInput {
   username: String!
   password: String!
@@ -14,12 +18,8 @@ type Message {
   createdAt: Int!
 }
 
-input MessageInput {
-  text: String!
-}
-
 type Mutation {
-  createMessage(payload: MessageInput!): Message!
+  createMessage(payload: CreateMessageInput!): Message!
   register(payload: RegisterInput!): User!
   login(payload: LoginInput!): User!
 }
