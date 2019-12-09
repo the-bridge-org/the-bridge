@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "the-bridge-client",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "public",
+  "cordova": {}
+}

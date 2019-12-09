@@ -27,5 +27,6 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
