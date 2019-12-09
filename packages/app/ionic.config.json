@@ -1,7 +1,5 @@
 {
   "name": "the-bridge-client",
-  "integrations": {
-    "capacitor": {}
-  },
+  "integrations": {},
   "type": "react"
 }
