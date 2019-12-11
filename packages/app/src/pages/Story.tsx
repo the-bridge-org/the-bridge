@@ -30,7 +30,7 @@ export const Story: React.FC = () => {
             <IonCol align-self-start>
               <IonTitle>Story</IonTitle>
             </IonCol>
-            <IonCol align-self-center size="8"></IonCol>
+            <IonCol align-self-center size="7"></IonCol>
             <IonCol align-self-end no-padding>
               <div>
                 <IonModal showBackdrop isOpen={showModal}>

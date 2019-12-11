@@ -22,8 +22,8 @@ const items: Item[] = [
 ];
 
 const albumStyle: object = {
-  height: "30%",
-  width: " 30%",
+  height: "50%",
+  width: " 50%",
   display: "block",
   margin: "auto",
 };
@@ -59,29 +59,8 @@ interface Items {
   items: Item[];
 }
 export const Story: React.FC<any> = props => {
-  const [story, setStory] = useState([
-    {
-      src: "http://placekitten.com/g/200/300",
-      title: "Cat",
-      date: "Sun, Dec 8, 2019",
-      location: "Burnaby",
-    },
-    {
-      src: "http://placekitten.com/g/200/300",
-      title: "Cat",
-      date: "Sun, Dec 8, 2019",
-      location: "Burnaby",
-    },
-  ]);
-  const [cover, setCover] = useState({
-    src: "http://placekitten.com/g/200/300",
-    title: "Cat",
-    date: "Sun, Dec 8, 2019",
-    location: "Burnaby",
-  });
-  useEffect(() => {
-    setStory(props);
-  });
+  const cover = props[0];
+
   return (
     <IonCard color="light">
       <IonCardContent>
