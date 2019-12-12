@@ -1,25 +1,6 @@
 import React, { Props, useState, useEffect } from "react";
 import { IonCard, IonCardContent, IonContent, IonLabel } from "@ionic/react";
-interface Item {
-  src: string;
-  title: string;
-  date: string;
-  location: string;
-}
-const items: Item[] = [
-  {
-    src: "http://placekitten.com/g/200/300",
-    title: "Cat",
-    date: "Sun, Dec 8, 2019",
-    location: "Burnaby",
-  },
-  {
-    src: "http://placekitten.com/g/200/300",
-    title: "Cat",
-    date: "Sun, Dec 8, 2019",
-    location: "Burnaby",
-  },
-];
+import { Link } from "react-router-dom";
 
 const albumStyle: object = {
   height: "50%",
@@ -55,31 +36,31 @@ const locationStyle: object = {
   left: "50%",
   transform: "translate(-50%, -50%)",
 };
-interface Items {
-  items: Item[];
-}
+
 export const Story: React.FC<any> = props => {
   const cover = props[0];
 
   return (
-    <IonCard color="light">
-      <IonCardContent>
-        <div className="thumbnail" style={albumStyle}>
-          <img src={cover.src} style={imgStyle} />
+    <Link to="/editStory">
+      <IonCard color="light" button>
+        <IonCardContent>
+          <div className="thumbnail" style={albumStyle}>
+            <img src={cover.src} style={imgStyle} />
 
-          <div style={textStyle}>
-            <div style={dateStyle}>
-              <p>{cover.date}</p>
-            </div>
-            <div style={titleStyle}>
-              <b>{cover.title}</b>
-            </div>
-            <div style={locationStyle}>
-              <p>{cover.location}</p>
+            <div style={textStyle}>
+              <div style={dateStyle}>
+                <p>{cover.date}</p>
+              </div>
+              <div style={titleStyle}>
+                <b>{cover.title}</b>
+              </div>
+              <div style={locationStyle}>
+                <p>{cover.location}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </IonCardContent>
-    </IonCard>
+        </IonCardContent>
+      </IonCard>
+    </Link>
   );
 };
