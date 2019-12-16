@@ -1,5 +1,5 @@
-import React, { Props, useState, useEffect } from "react";
-import { IonCard, IonCardContent, IonContent, IonLabel } from "@ionic/react";
+import React from "react";
+import { IonCard, IonCardContent } from "@ionic/react";
 import { Link } from "react-router-dom";
 
 const albumStyle: object = {

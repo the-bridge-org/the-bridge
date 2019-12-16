@@ -3,16 +3,27 @@ import {
   IonContent,
   IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
   IonButton,
   IonIcon,
   IonRow,
-  IonCol,
   IonModal,
 } from "@ionic/react";
 import { add, arrowBack } from "ionicons/icons";
 import { StoryItem } from "../components/StoryItem";
+import { withRouter, useHistory } from "react-router-dom";
+
+const BackButton: React.FC = () => {
+  let history = useHistory();
+
+  return (
+    <IonButton fill="clear" slot="icon-only" onClick={() => history.goBack()}>
+      <IonIcon icon={arrowBack} /> Back
+    </IonButton>
+  );
+};
+
+export default withRouter(BackButton);
+
 const modalStyle = {
   width: "15%",
   right: "15px",
@@ -43,9 +54,7 @@ export const EditStory: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonButton fill="clear" slot="icon-only">
-          <IonIcon icon={arrowBack} /> Back
-        </IonButton>
+        <BackButton />
         <IonModal showBackdrop isOpen={showModal}>
           <IonRow>
             <IonButton
