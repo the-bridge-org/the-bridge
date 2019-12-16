@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IonContent, IonIcon, IonItem, IonLabel } from "@ionic/react";
+import { IonContent } from "@ionic/react";
 import { Story } from "./Story";
 interface Item {
   src: string;
