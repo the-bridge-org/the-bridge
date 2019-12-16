@@ -15,6 +15,7 @@ import { Home } from "./pages/Home";
 import { More } from "./pages/More";
 import { Note } from "./pages/Note";
 import { Story } from "./pages/Story";
+import { EditStory } from "./pages/EditStory";
 
 export const Router: React.FC = () => {
   return (
@@ -22,10 +23,12 @@ export const Router: React.FC = () => {
       <IonTabs>
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact={true} />
+          <Route path="/editStory" component={EditStory} exact={true} />
           <Route path="/story" component={Story} exact={true} />
           <Route path="/chat" component={Chat} exact={true} />
           <Route path="/note" component={Note} exact={true} />
           <Route path="/more" component={More} exact={true} />
+
           <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
