@@ -37,6 +37,24 @@ const locationStyle: object = {
   transform: "translate(-50%, -50%)",
 };
 
+interface storyStyleType {
+  imgStyle: object;
+  textStyle: object;
+  dateStyle: object;
+  locationStyle: object;
+  titleStyle: object;
+  albumStyle: object;
+}
+
+export const storyStyle: storyStyleType = {
+  albumStyle,
+  imgStyle,
+  textStyle,
+  titleStyle,
+  dateStyle,
+  locationStyle,
+};
+
 export const Story: React.FC<any> = props => {
   const cover = props[0];
 
