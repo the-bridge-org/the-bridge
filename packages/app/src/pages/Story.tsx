@@ -7,8 +7,7 @@ import {
   IonRow,
   IonCol,
 } from "@ionic/react";
-import { add } from "ionicons/icons";
-import React, { useState } from "react";
+import React from "react";
 import { StoryList } from "../components/StoryList";
 import { AddStoryModal } from "../components/AddStoryModal";
 
@@ -18,13 +17,10 @@ export const Story: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonRow>
-            <IonCol align-self-start>
-              <IonTitle>Story</IonTitle>
-            </IonCol>
-            <IonCol align-self-center size="6"></IonCol>
-            <IonCol align-self-end no-padding>
+            <IonTitle>Story</IonTitle>
+            <div style={{ right: "20px", top: "-4px", position: "absolute" }}>
               <AddStoryModal edit={false} />
-            </IonCol>
+            </div>
           </IonRow>
         </IonToolbar>
       </IonHeader>

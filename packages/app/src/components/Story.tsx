@@ -61,23 +61,22 @@ export const Story: React.FC<any> = props => {
   return (
     <Link to="/editStory">
       <IonCard color="light" button>
-        <IonCardContent>
-          <div className="thumbnail" style={albumStyle}>
-            <img src={cover.src} style={imgStyle} />
+        <div className="thumbnail" style={albumStyle}>
+          <img src={cover.src} style={imgStyle} />
 
-            <div style={textStyle}>
-              <div style={dateStyle}>
-                <p>{cover.date}</p>
-              </div>
-              <div style={titleStyle}>
-                <b>{cover.title}</b>
-              </div>
-              <div style={locationStyle}>
-                <p>{cover.location}</p>
-              </div>
+          <div style={textStyle}>
+            <div style={dateStyle}>
+              <p>{cover.date}</p>
+            </div>
+            <div style={titleStyle}>
+              <b>{cover.title}</b>
+            </div>
+            <div style={locationStyle}>
+              <p>{cover.location}</p>
             </div>
           </div>
-        </IonCardContent>
+        </div>{" "}
+        <IonCardContent></IonCardContent>
       </IonCard>
     </Link>
   );
