@@ -72,13 +72,10 @@ export const EditStory: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonRow>
-            <IonCol>
-              <BackButton />
-            </IonCol>
-            <IonCol align-self-center size="6"></IonCol>
-            <IonCol align-self-end>
+            <BackButton />
+            <div style={{ right: "20px", top: "-4px", position: "absolute" }}>
               <AddStoryModal edit={true} date={story[0].date} />
-            </IonCol>
+            </div>
           </IonRow>
         </IonToolbar>
       </IonHeader>
@@ -87,7 +84,6 @@ export const EditStory: React.FC = () => {
           <IonCardContent>
             <div className="thumbnail" style={albumStyle}>
               <img src={cover.src} style={imgStyle} />
-
               <div style={textStyle}>
                 <div style={dateStyle}>
                   <p>{cover.date}</p>
